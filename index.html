@@ -170,6 +170,7 @@ body:JSON.stringify(data)
 .then(()=>{
 
 alert("Order Submitted Successfully");
+  loadOrders();
 
 document.getElementById("popup").style.display="none";
 
@@ -188,27 +189,13 @@ if(
 username==="kawnain" &&
 password==="kawnain737@#"
 ){
-
-let html="<h2>Orders</h2>";
-
-orders.forEach(order=>{
-html +=
-"<p><b>Name:</b> "+order.name+
-"<br><b>Address:</b> "+order.address+
-"<br><b>Phone:</b> "+order.phone+
-"<br><b>Product:</b> "+order.product+
-"<br><b>Size:</b> "+order.size+
-"<hr></p>";
-});
-
 document.getElementById("adminPanel").style.display="block";
-document.getElementById("adminPanel").innerHTML=html;
+loadOrders();
 
 }else{
 alert("Wrong username or password");
 }
 }
-
 </script>
 
 </body>
